@@ -1,24 +1,17 @@
 {
-  "name": "tiny-donations",
+  "name": "02-one-solution",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/janaktripathee/tiny-donations.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/janaktripathee/tiny-donations/issues"
-  },
-  "homepage": "https://github.com/janaktripathee/tiny-donations#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "express": "4.16.4",
+    "mysql": "2.16.0"
   }
 }

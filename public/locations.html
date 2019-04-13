@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiny Donations</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+
+<h2>Locations</h2>
+
+<div id="map-locations"></div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script async defer 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8d9NYIa0fGt6Njq4yXZWJfvi2CM86h3Y&callback=initLocations"></script>
+  <script type="text/javascript" src="/assets/js/locations.js"></script>
+
+
+<script type="text/javascript">
+	initLocations();
+</script>
+</body>
+</html>

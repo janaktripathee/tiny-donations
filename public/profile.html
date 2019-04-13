@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiny Donations</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+
+<h2>Profile</h2>
+<form id="update_profile">
+	
+	<table>
+	<tr><td>Name:</td> <td><input type='text' id='name' placeholder='Location Name'/> </td> </tr>
+	<tr><td>Address</td> 
+	<tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
+	<tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
+	<tr><td>State:</td> <td><input type='text' id='state' placeholder='State'/> </td> </tr>
+	<tr><td>ZIP:</td> <td><input type='text' id='zip' placeholder='ZIP'/> </td> </tr>
+	<tr><td>Available</td> 
+	<tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
+	<tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
+	<tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
+	<tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
+	</table>
+
+	<button>Save</button>
+</form>
+<div id="profile-info"></div>
+<div id="profile-infowindow"></div>
+<div id="map-profile"></div>
+
+<h2>Edit Profile</h2>
+<form id="edit_profile">
+	<input type="number" id="id" placeholder="ID">
+	<input type="text" id='name' placeholder="Location Name">
+	<button>Update</button>
+</form>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script async defer 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8d9NYIa0fGt6Njq4yXZWJfvi2CM86h3Y&callback=initMap"></script>
+  <script type="text/javascript" src="/assets/js/profile-map.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-select.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-insert.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-update.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-delete.js"></script>
+
+
+<script type="text/javascript">
+	getProfile();
+	initMap();
+</script>
+</body>
+</html>
+
+
+

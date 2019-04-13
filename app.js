@@ -4,58 +4,35 @@ var bodyParser = require('body-parser')
 var express = require('express');
 var app = express();
 
-
 app.use(express.static("public"));
-
-//integrate body-parser with express
-
-	// parse application/x-www-form-urlencoded
-	app.use(bodyParser.urlencoded({ extended: false }))
-	 
-	// parse application/json
-	app.use(bodyParser.json())
-
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'password',
-  database : 'actors_db'
+  database : 'tiny_donations_db'
 });
  
 connection.connect();
 
-//is there a route that will always get hit
-// app.get('*', function(req, res, next){
-// 	connection.query('INSERT INTO page_views',function (error, results, fields) {
-// 	  next();
-// 	});
-// });
+app.get('/profile',function(req,res) {
+  res.sendFile(__dirname + '/public/profile.html');
+});
 
-app.get('/actors.json', function(req, res){
-	connection.query('SELECT * FROM actors', function (error, results, fields) {
+app.get('/profile.json', function(req, res){
+	connection.query('SELECT * FROM users', function (error, results, fields) {
 	  if (error) res.send(error)
 	  else res.json(results);
 	});
 });
 
-//you can't access a post from the browser
-	/*
-		the only way to access a post route is by using one of the following
-
-			ajax
-
-			a form
-
-			a curl call
-
-				curl -d "actor_name=haven-thy" -X POST http://localhost:3001/actors-insert
-
-			chrome extension named post man 
-	*/
-app.post('/actors-insert', function(req, res){
-	connection.query('INSERT INTO actors (actor_name) VALUES (?)', [req.body.actor_name],function (error, results, fields) {
+app.post('/profile-insert', function(req, res){
+	connection.query('INSERT INTO users (name,street,city,state,zip,days,hours,instructions) VALUES (?,?,?,?,?,?,?,?)', 
+		[req.body.name,req.body.street,req.body.city,req.body.state,req.body.zip,req.body.days,req.body.hours,req.body.instructions]
+		,function (error, results, fields) {
 	  if (error) res.send(error)
 	  else res.json({
 	  	message: 'success'
@@ -63,43 +40,47 @@ app.post('/actors-insert', function(req, res){
 	});
 });
 
-// http://localhost:3001/actors-delete?cat_id=3
-// what will the delete route look like in this app.js file
-app.post('/actors-delete', function(req, res){
-	connection.query('DELETE FROM actors WHERE id = (?)', [req.body.actor_id],function (error, results, fields) {
-	  
-	  res.redirect('/');
-	
-	});
-});
+// app.post('/profile-update-location/', function(req, res){
+// 	connection.query('UPDATE users SET lat = (?) lng = (?)', [req.body.lat, req.body.lng],function (error, results, fields) {
+	  	
+// 	});
+// });
 
-// one way
-	// http://localhost:3001/actors-update/6?actor_name=tom%20cruz
-	app.post('/actors-update/:id', function(req, res){
-		connection.query('UPDATE actors SET actor_name = (?) WHERE id = (?)', [req.body.actor_name, req.params.id],function (error, results, fields) {
+app.post('/profile-update', function(req, res){
+		connection.query('UPDATE users SET lat = (?), lng = (?)', [req.body.lat,req.body.lng],function (error, results, fields) {
 		  
-		  res.redirect('/');
 		
 		});
 	});
 
-// another way
-	// http://localhost:3001/cats-update?cat_name=dragon&cat_id=4
-	// app.get('/cats-update', function(req, res){
-	// 	connection.query('UPDATE cats SET cat_name = (?) WHERE id = (?)', [req.query.cat_name, req.query.cat_id],function (error, results, fields) {
-		  
-	// 	  res.redirect('/');
-		
-	// 	});
-	// });
 
-//so if the user hits a route that does not exist then redirec them to the home page
+app.post('/profile-delete', function(req, res){
+	connection.query('DELETE FROM users WHERE id = (?)', [req.body.id],function (error, results, fields) {
+	  
+	  res.redirect('/profile.html');
+	
+	});
+});
+
+// app.post('/profile-edit/:id', function(req, res){
+// 	connection.query('UPDATE users SET name = (?) WHERE id = (?)', [req.body.name, req.params.id],function (error, results, fields) {
+	  
+// 	  res.redirect('/');
+	
+// 	});
+// });
+
+app.get('/locations',function(req,res) {
+  res.sendFile(__dirname + '/public/locations.html');
+});
+
+
 app.get('*', function(req, res){
 	res.redirect('/')
 });
 
-app.listen(3001, function(){
-	console.log('listening on 3001');
+app.listen(3000, function(){
+	console.log('listening on 3000');
 });
 
 

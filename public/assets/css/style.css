@@ -1,3 +1,23 @@
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+
 button {
 	margin-left : 5px;
+}
+
+#map-profile {
+    height: 350px;
+    width: 500px;
+}
+ 
+#map-locations {
+     height: 600px;
+     width: 800px;
+ }
+
+#profile-infowindow{
+    display: none;
 }
