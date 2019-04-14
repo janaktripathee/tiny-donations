@@ -1,25 +1,49 @@
 
-function initLocations() {
+function  initLocations() {
     var mapOptions = {
         center: new google.maps.LatLng( 37.7749, -122.4194), 
-        zoom: 12
+        zoom: 14
      };
     
-    var map = new google.maps.Map(document.getElementById("map-locations"),
-                                  mapOptions);
+    var map = new google.maps.Map(document.getElementById("map-locations"), mapOptions);
+
+    $.ajax({
+    url: '/profile.json',
+    method: 'GET'
+    }).then(function(profile){
+
+    var infowindow = new google.maps.InfoWindow();
+    var marker, profileIndex;
+
+    for (var profileIndex in profile){
+
+      var lat = profile[profileIndex].lat;
+      var lng = profile[profileIndex].lng;
+
+      console.log(lat, lng);
+
+      marker = new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map,
+      });
+
+      google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
+                return function () {
+                infowindow.open(map, marker);
+                infowindow.setContent(
+                  'Name: ' + profile[profileIndex].name + '<br>' +
+                  'Street: ' + profile[profileIndex].street  + '<br>' +
+                  'City: ' + profile[profileIndex].city + '<br>' +
+                  'State: ' + profile[profileIndex].state + '<br>' +
+                  'Zip: ' + profile[profileIndex].zip + '<br>' +
+                  'Days: ' + profile[profileIndex].days + '<br>' +
+                  'Hours: ' + profile[profileIndex].hours + '<br>' +
+                  'Instructions: ' + profile[profileIndex].instructions + '<br>' +
+                  "<input type='button' id='save_location' value='Donate Here'>"
+                  );
+                }
+              })(marker, profileIndex));
     
-    buscarCoords(function(resultsObject) {
-        var coordsArray = ConvertFromGrdToGoogle(resultsObject.result);
-        for (var i = 0; i < coordsArray.length; i++) {
-            var coords = coordsArray[i].split(", ");
-            new google.maps.Marker({
-                position: new google.maps.LatLng(parseFloat(coords[0]), parseFloat(coords[1])),
-                map: map
-            });
-        };
-        
-    });
-     // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -33,34 +57,13 @@ function initLocations() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {
-          // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
       
+    };
+  });
 }
 
-function buscarCoords(callback) {
-     /* var result = result;
-      connection.query('SELECT * FROM monitoreo_actual', function(err, result){
-        if(err){
-          console.log(err);
-        }
-          callback({result:result});
-      });*/
-    
-    // Simulate the sql access and respond in 1 second;
-    setTimeout(function() {
-        var response = {result: {}};
-        callback(response);
-    }, 1000);
-}
 
-function ConvertFromGrdToGoogle(result) {
-    // Your code here
-    
-    // I return this hardcoded simulating you process.
-    return [ '37.8287810797496, -122.26560568468084',
-              ];
-}
 
 

@@ -18,7 +18,8 @@ function getProfile(){
 							      <br> Zip: ${profile[profileIndex].zip}
 								  <br> Days: ${profile[profileIndex].days}
 								  <br> Hours: ${profile[profileIndex].hours}
-								  <br> Instructions: ${profile[profileIndex].instructions}`)
+								  <br> Instructions: ${profile[profileIndex].instructions}
+								  <br>`)
 
 
 				var bt = $('<button>'); //<button></button>
@@ -43,7 +44,7 @@ function getProfile(){
 								  <br> Days: ${profile[profileIndex].days}
 								  <br> Hours: ${profile[profileIndex].hours}
 								  <br> Instructions: ${profile[profileIndex].instructions} 
-								  <br> <input type='button' id='save_location' onclick="saveLocation()" value='Save'/> `)
+								  <br> <input type='button' id='save_location' onclick="saveLocation()" value='Save Location'/> `)
 
 			
 			$('#profile-infowindow').html(windowprofileinfo);
