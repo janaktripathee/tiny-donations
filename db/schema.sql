@@ -18,6 +18,6 @@ CREATE TABLE users (
 	days  VARCHAR(225),
 	instructions VARCHAR(255),
 	lat DECIMAL(10, 8),
-	lng DECIMAL(10, 8),
+	lng DECIMAL(11, 8),
 	PRIMARY KEY (id)
 );
