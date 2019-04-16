@@ -6,9 +6,8 @@ USE tiny_donations_db;
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
-	-- email VARCHAR(255) NOT NULL UNIQUE,
-	-- password_hash VARCHAR(255) NOT NULL,
-	-- role INT NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
 	name VARCHAR(255),
 	street VARCHAR(255),
 	city VARCHAR(255),
