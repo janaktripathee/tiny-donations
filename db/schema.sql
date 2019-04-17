@@ -8,10 +8,7 @@ CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
     user_name VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
-<<<<<<< HEAD
 	user_group VARCHAR(255) DEFAULT 'donor' NOT NULL,
-=======
->>>>>>> 9e6b3c6de17cf84721e80869755d0dee3db66945
 	name VARCHAR(255),
 	location_name VARCHAR(255),
 	street VARCHAR(255),
@@ -28,7 +25,9 @@ CREATE TABLE users (
 
 CREATE TABLE donations_accepted (
     id INT NOT NULL AUTO_INCREMENT, 
-    dontation_type VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL,
+    dontation_type VARCHAR(255),
+    quantity INT,
+    -- user_id INT ,
+    -- foreign key (user_id) references users(id),
     PRIMARY KEY(id)
 );

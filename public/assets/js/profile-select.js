@@ -34,7 +34,7 @@ function getProfile(){
 				$('#map-profile').hide();
 				$('#update_profile').hide();
 				$('#location-map').hide();
-
+				$('#update_accepted_donations').hide();
 
 
 				var deletebt = $('<button>'); //<button></button>
@@ -76,7 +76,6 @@ function getProfile(){
 				$('#location-info').html(locationinfo);
 				locationinfo.append(editbt);
 				$('#location-map').show();
-
 
 			}
 		}

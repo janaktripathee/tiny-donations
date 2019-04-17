@@ -2,6 +2,7 @@
 $(document).on('click', '#create_donation_center', function(e) {
      $('#update_profile').show();
      $('#map-profile').show();
+     $('#update_accepted_donations').show();
 
 });
 
@@ -16,11 +17,34 @@ $('#update_profile').submit(function(e) {
     var ca = $( "#update_profile input[id='days']" ).val();
     var cm = $( "#update_profile input[id='hours']" ).val();
     var cv = $( "#update_profile input[id='instructions']" ).val();
+    
 
     $.ajax({
         url: '/profile-update',
         method: 'POST',
         data: {location_name: cn, street: cb, city: cj, state: cl, zip: cg, days: ca, hours: cm, instructions: cv},
+
+        // url: '/profile-insert-accepted-donations',
+        // method: 'POST',
+        // data: {donation_type: cx, quantity: cz},
+
+    
+    }).then(function(message){
+        initMap();
+        getProfile();
+
+    });
+});
+
+$('#update_accepted_donations').submit(function(e) {
+
+    var cx = $( "#update_accepted_donations input[name='donation_type']" ).val();
+    var cz = $( "#update_accepted_donations input[name='quantity']" ).val();
+
+    $.ajax({
+        url: '/profile-insert-accepted-donations',
+        method: 'POST',
+        data: {donation_type: cx, quantity: cz},
 
     }).then(function(message){
         initMap();
@@ -32,5 +56,6 @@ $('#update_profile').submit(function(e) {
 
 $(document).on('click', '.edit', function(e) {
          $('#update_profile').show();
+
      });
 

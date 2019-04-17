@@ -11,7 +11,6 @@
 <div id="profile-info"></div>
 <div id="location-info"></div>
 <form id="update_profile">
-	
 	<table>
 	<tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
 	<tr><td>Address</td> 
@@ -22,17 +21,21 @@
 	<tr><td>Available</td> 
 	<tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
 	<tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
-	<tr><td>Donations Accepted:</td></tr>
-	<tr><td><input type="checkbox" id="canned-food" name="canned-food" <label for="canned-food">Canned Food</label></td></tr>
-	<tr><td><input type="checkbox" id="clothing" name="clothing" <label for="clothing">Clothing</label></td></tr>
-	<tr><td><input type="checkbox" id="toys" name="toys" <label for="toys">Toys</label></td></tr>
-	<tr><td><input type="checkbox" id="blankets" name="blankets" <label for="blankets">Blankets</label></td></tr>
-	<tr><td><input type="checkbox" id="school-supplies" name="school-supplies" <label for="school-supplies">School Supplies</label></td></tr>
 	<tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
 	<tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
 	</table>
-
 	<button>Save</button>
+</form>
+<form id="update_accepted_donations">
+	<table>
+	<tr><td>Accepted:</td><td>Qty:</td></tr>
+	<tr><td><input type='text' id='donation_type_1' class='donation_type' placeholder='ex. Canned Food'/> </td> <td><input type='text' class="quantity"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type_2' class='donation_type' placeholder='ex. Blankets'/> </td> <td><input type='text' class="quantity"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type_3' name='donation_type' placeholder='ex. School Supplies'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type_4' name='donation_type' placeholder='ex. Toys'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type_5' name='donation_type' placeholder='ex. Clothing'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
+	</table>
+<button>Save</button>
 </form>
 
 <div id="profile-infowindow"></div>
@@ -46,7 +49,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script async defer 
-  src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoRw8ITzzkxlkYUX92Oq7bcyhqyjdkgJ8&callback=initMap"></script>
   <script type="text/javascript" src="/assets/js/profile-map.js"></script>
   <script type="text/javascript" src="/assets/js/profile-select.js"></script>
   <script type="text/javascript" src="/assets/js/profile-insert.js"></script>

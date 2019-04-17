@@ -123,7 +123,13 @@ app.get('/profile.json', function(req, res){
 	  if (error) res.send(error)
 	  else res.json(results);
 	});
+
 });
+
+// connection.query('SELECT * FROM donations_accepted', function (error, results, fields) {
+//     if (error) res.send(error)
+//     else res.json(results);
+//   });
 
 app.post('/profile-update', function(req, res){
     connection.query('UPDATE users SET user_group = (?), location_name = (?), street = (?), city = (?), state = (?), zip = (?), days = (?), hours = (?), instructions = (?)', 
@@ -131,6 +137,14 @@ app.post('/profile-update', function(req, res){
       
     });
   });
+
+
+
+app.post('/profile-insert-accepted-donations', function(req, res){
+  connection.query('INSERT INTO donations_accepted (dontation_type, quantity) VALUES (?,?)', 
+    [req.body.donation_type,req.body.quantity],function (error, results, fields) {
+  });
+});
 
 app.post('/profile-update-location', function(req, res){
     connection.query('UPDATE users SET lat = (?), lng = (?)', [req.body.lat,req.body.lng],function (error, results, fields) {

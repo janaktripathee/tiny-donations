@@ -8,3 +8,10 @@ INSERT INTO users (name, street, city, state, zip, days, hours, instructions, la
 ("Derek Bonds","88 South Park","Kirkland","CA", 93930, "Sat, Sun", "9-2PM" ,"Green box under window", 37.83109807322052, -122.26593392590405),
 ("Donald Sutherland","8823 Ceder CT","Sna Jose","CA", 93930, "M,T,Th", "3-5P" ,"Table labeled donations", 37.83630508457882, -122.25125687817456);
 
+USE tiny_donations_db;
+
+INSERT INTO donations_accepted (dontation_type, quantity) VALUES
+('chalk', 41),
+('books', 24),
+('blankets', 3),
+('canned food', 4);
