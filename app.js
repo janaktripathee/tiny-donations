@@ -108,6 +108,10 @@ app.get('/img2',function(req, res){
     res.sendFile(__dirname + '/public/assets/images/image2.jpg');
     
 })
+app.get('/img3',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/image3.png');
+    
+})
 app.get('/giveimg',function(req, res){
     res.sendFile(__dirname + '/public/assets/images/give.png');
     
