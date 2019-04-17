@@ -100,6 +100,19 @@ app.get('/logout',function(req, res){
 app.get('/profile',function(req,res) {
   res.sendFile(__dirname + '/public/profile.html');
 });
+app.get('/img1',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/image1.jpg');
+    
+})
+app.get('/img2',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/image2.jpg');
+    
+})
+app.get('/giveimg',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/give.png');
+    
+})
+
 
 app.get('/profile.json', function(req, res){
 	connection.query('SELECT * FROM users', function (error, results, fields) {
