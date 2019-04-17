@@ -1,7 +1,14 @@
+
+$(document).on('click', '#create_donation_center', function(e) {
+     $('#update_profile').show();
+     $('#map-profile').show();
+
+});
+
 $('#update_profile').submit(function(e) {
 
     // e.preventDefault(); // avoid to execute the actual submit of the form.
-    var cn = $( "#update_profile input[id='name']" ).val();
+    var cn = $( "#update_profile input[id='location_name']" ).val();
     var cb = $( "#update_profile input[id='street']" ).val();
     var cj = $( "#update_profile input[id='city']" ).val();
     var cl = $( "#update_profile input[id='state']" ).val();
@@ -10,18 +17,20 @@ $('#update_profile').submit(function(e) {
     var cm = $( "#update_profile input[id='hours']" ).val();
     var cv = $( "#update_profile input[id='instructions']" ).val();
 
-	$.ajax({
-		url: '/profile-insert',
-		method: 'POST',
-		data: {name : cn, street: cb, city: cj, state: cl, zip: cg, days: ca, hours: cm, instructions: cv},
+    $.ajax({
+        url: '/profile-update',
+        method: 'POST',
+        data: {location_name: cn, street: cb, city: cj, state: cl, zip: cg, days: ca, hours: cm, instructions: cv},
 
-	}).then(function(message){
-		getProfile();
+    }).then(function(message){
         initMap();
+        getProfile();
 
-        // $('#update_profile').hide();
-	});
+    });
 
 });
 
+$(document).on('click', '.edit', function(e) {
+         $('#update_profile').show();
+     });
 

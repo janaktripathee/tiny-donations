@@ -64,6 +64,8 @@ function  initLocations() {
   });
 }
 
+$('.carousel').carousel();
+
 
 
 

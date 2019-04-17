@@ -6,10 +6,11 @@ USE tiny_donations_db;
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
-	-- email VARCHAR(255) NOT NULL UNIQUE,
-	-- password_hash VARCHAR(255) NOT NULL,
-	-- role INT NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	user_group VARCHAR(255) DEFAULT 'donor' NOT NULL,
 	name VARCHAR(255),
+	location_name VARCHAR(255),
 	street VARCHAR(255),
 	city VARCHAR(255),
 	state  VARCHAR(255),
@@ -20,4 +21,11 @@ CREATE TABLE users (
 	lat DECIMAL(10, 8),
 	lng DECIMAL(11, 8),
 	PRIMARY KEY (id)
+);
+
+CREATE TABLE donations_accepted (
+    id INT NOT NULL AUTO_INCREMENT, 
+    dontation_type VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY(id)
 );

@@ -7,10 +7,13 @@
 <body>
 
 <h2>Profile</h2>
+
+<div id="profile-info"></div>
+<div id="location-info"></div>
 <form id="update_profile">
 	
 	<table>
-	<tr><td>Name:</td> <td><input type='text' id='name' placeholder='Location Name'/> </td> </tr>
+	<tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
 	<tr><td>Address</td> 
 	<tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
 	<tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
@@ -19,22 +22,22 @@
 	<tr><td>Available</td> 
 	<tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
 	<tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
+	<tr><td>Donations Accepted:</td></tr>
+	<tr><td><input type="checkbox" id="canned-food" name="canned-food" <label for="canned-food">Canned Food</label></td></tr>
+	<tr><td><input type="checkbox" id="clothing" name="clothing" <label for="clothing">Clothing</label></td></tr>
+	<tr><td><input type="checkbox" id="toys" name="toys" <label for="toys">Toys</label></td></tr>
+	<tr><td><input type="checkbox" id="blankets" name="blankets" <label for="blankets">Blankets</label></td></tr>
+	<tr><td><input type="checkbox" id="school-supplies" name="school-supplies" <label for="school-supplies">School Supplies</label></td></tr>
 	<tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
 	<tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
 	</table>
 
 	<button>Save</button>
 </form>
-<div id="profile-info"></div>
-<div id="profile-infowindow"></div>
-<div id="map-profile"></div>
 
-<h2>Edit Profile</h2>
-<form id="edit_profile">
-	<input type="number" id="id" placeholder="ID">
-	<input type="text" id='name' placeholder="Location Name">
-	<button>Update</button>
-</form>
+<div id="profile-infowindow"></div>
+
+<span id='location-map'>Location: <br></span><div id="map-profile"></div>
 
 
 
@@ -47,7 +50,6 @@
   <script type="text/javascript" src="/assets/js/profile-map.js"></script>
   <script type="text/javascript" src="/assets/js/profile-select.js"></script>
   <script type="text/javascript" src="/assets/js/profile-insert.js"></script>
-  <script type="text/javascript" src="/assets/js/profile-update.js"></script>
   <script type="text/javascript" src="/assets/js/profile-delete.js"></script>
 
 
