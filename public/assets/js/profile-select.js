@@ -35,21 +35,24 @@ function getProfile(){
 				$('#update_profile').hide();
 				$('#location-map').hide();
 				$('#update_accepted_donations').hide();
+				$('#location-map').hide();
+				$('#donations-accepted').hide();
+
 
 
 				var deletebt = $('<button>'); //<button></button>
 				deletebt.attr('class', 'delete');
 				
-				deletebt.text('Delete Profile'); //<button>delete</button>
+				deletebt.text('Delete'); //<button>delete</button>
 				deletebt.attr('data-id', profile[profileIndex].id)
 				//<button data-id="4">delete</button>
 
 				locationinfo.append(deletebt);
 
-				var editbt = $('<button>'); //<button></button>
-				editbt.attr('class', 'edit');
+				var editprofilebt = $('<button>'); //<button></button>
+				editprofilebt.attr('class', 'edit');
 				
-				editbt.text('Edit Profile'); //<button>delete</button>
+				editprofilebt.text('Edit'); //<button>delete</button>
 				//<button data-id="4">delete</button>
 				
 			
@@ -57,7 +60,7 @@ function getProfile(){
 			var windowprofileinfo = $('<div>'); // <p></p>
 
 				
-				windowprofileinfo.html(`<br> Name: ${profile[profileIndex].name} 
+				windowprofileinfo.html(`Name: ${profile[profileIndex].name} 
 								  <br> Street: ${profile[profileIndex].street}
 							      <br> City: ${profile[profileIndex].city}
 							      <br> State: ${profile[profileIndex].state}
@@ -70,14 +73,37 @@ function getProfile(){
 			
 			$('#profile-infowindow').html(windowprofileinfo);
 
+
 			if (profile[profileIndex].user_group == 'donation_center'){      
 				$('#create_donation_center').hide();
 				$('#map-profile').show();
 				$('#location-info').html(locationinfo);
-				locationinfo.append(editbt);
+				locationinfo.append(editprofilebt);
 				$('#location-map').show();
+				$('#update_accepted_donations').hide();
+				$('#donations-accepted').show();
 
 			}
 		}
 	})
+	$.ajax({
+		url: '/donationsaccepted.json',
+		method: 'GET'
+	}).then(function(donationsaccepted){
+
+		var editdonationsbutton = $('<button>'); //<button></button>
+				editdonationsbutton.attr('class', 'edit-donations');
+				
+				editdonationsbutton.text('Edit');
+			$('#donations-accepted-button').append(editdonationsbutton);
+		for (var donationsacceptedIndex in donationsaccepted){
+			
+
+			var donations_accepted = $('<div>');
+			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} Qty: ${donationsaccepted[donationsacceptedIndex].quantity}`)
+			$('#donations-accepted').append(donations_accepted);
+
+			// $('#profile-infowindow').append(donations_accepted);
+};
+});
 }

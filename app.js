@@ -58,7 +58,7 @@ app.post('/signup', function(req, res){
               return;
           }
 
-         message = "Succesfully! Your account has been created.";
+         message = "Success! Your account has been created.";
          res.render('login',{message: message, level: 'success'});
       });
     
@@ -126,6 +126,14 @@ app.get('/profile.json', function(req, res){
 
 });
 
+app.get('/donationsaccepted.json', function(req, res){
+  connection.query('SELECT * FROM donations_accepted', function (error, results, fields) {
+    if (error) res.send(error)
+    else res.json(results);
+  });
+
+});
+
 // connection.query('SELECT * FROM donations_accepted', function (error, results, fields) {
 //     if (error) res.send(error)
 //     else res.json(results);
@@ -141,7 +149,7 @@ app.post('/profile-update', function(req, res){
 
 
 app.post('/profile-insert-accepted-donations', function(req, res){
-  connection.query('INSERT INTO donations_accepted (dontation_type, quantity) VALUES (?,?)', 
+  connection.query('INSERT INTO donations_accepted (donation_type, quantity ) VALUES (?,?)', 
     [req.body.donation_type,req.body.quantity],function (error, results, fields) {
   });
 });
@@ -172,7 +180,7 @@ app.get('*', function(req, res){
 });
 
 app.listen(port, function(){
-	console.log('listening on'+port);
+	console.log('listening on '+port);
 });
 
 

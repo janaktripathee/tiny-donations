@@ -25,7 +25,7 @@ CREATE TABLE users (
 
 CREATE TABLE donations_accepted (
     id INT NOT NULL AUTO_INCREMENT, 
-    dontation_type VARCHAR(255),
+    donation_type VARCHAR(255),
     quantity INT,
     -- user_id INT ,
     -- foreign key (user_id) references users(id),

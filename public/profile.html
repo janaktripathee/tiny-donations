@@ -10,6 +10,8 @@
 
 <div id="profile-info"></div>
 <div id="location-info"></div>
+<span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div>
+<div id ='donations-accepted-button'></div>
 <form id="update_profile">
 	<table>
 	<tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
@@ -29,17 +31,16 @@
 <form id="update_accepted_donations">
 	<table>
 	<tr><td>Accepted:</td><td>Qty:</td></tr>
-	<tr><td><input type='text' id='donation_type_1' class='donation_type' placeholder='ex. Canned Food'/> </td> <td><input type='text' class="quantity"  size='3'/></td></tr>
-	<tr><td><input type='text' id='donation_type_2' class='donation_type' placeholder='ex. Blankets'/> </td> <td><input type='text' class="quantity"  size='3'/></td></tr>
-	<tr><td><input type='text' id='donation_type_3' name='donation_type' placeholder='ex. School Supplies'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
-	<tr><td><input type='text' id='donation_type_4' name='donation_type' placeholder='ex. Toys'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
-	<tr><td><input type='text' id='donation_type_5' name='donation_type' placeholder='ex. Clothing'/> </td> <td><input type='text' name="quantity"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Blankets'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. School Supplies'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Toys'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+	<tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Clothing'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
 	</table>
 <button>Save</button>
 </form>
 
 <div id="profile-infowindow"></div>
-
 <span id='location-map'>Location: <br></span><div id="map-profile"></div>
 
 
@@ -49,7 +50,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script async defer 
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoRw8ITzzkxlkYUX92Oq7bcyhqyjdkgJ8&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initMap"></script>
   <script type="text/javascript" src="/assets/js/profile-map.js"></script>
   <script type="text/javascript" src="/assets/js/profile-select.js"></script>
   <script type="text/javascript" src="/assets/js/profile-insert.js"></script>

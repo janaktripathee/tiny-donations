@@ -3,8 +3,10 @@ $(document).on('click', '#create_donation_center', function(e) {
      $('#update_profile').show();
      $('#map-profile').show();
      $('#update_accepted_donations').show();
+     $('#create_donation_center').hide();
 
 });
+
 
 $('#update_profile').submit(function(e) {
 
@@ -38,13 +40,25 @@ $('#update_profile').submit(function(e) {
 
 $('#update_accepted_donations').submit(function(e) {
 
-    var cx = $( "#update_accepted_donations input[name='donation_type']" ).val();
-    var cz = $( "#update_accepted_donations input[name='quantity']" ).val();
+    var cx = $( "#update_accepted_donations input[name='donation_type[]']" ).val();
+    var cz = $( "#update_accepted_donations input[name='quantity[]']" ).val();
+   
+    // var cx = $("#update_accepted_donations input[name='donation_type[]']").map(function(){return $(this).val();}).get();
+    // var cz = $("#update_accepted_donations input[name='quantity[]']").map(function(){return $(this).val();}).get();
 
+    
+    // for (var i = 0; i < cxv.length; i++) {
+    //     console.log(cxv[i]);
+    // }
+    // for (var i = 0; i < czv.length; i++) {
+    //     console.log(czv[i]);
+    // }
+ 
+ 
     $.ajax({
         url: '/profile-insert-accepted-donations',
         method: 'POST',
-        data: {donation_type: cx, quantity: cz},
+        data: {'donation_type': cx, 'quantity': cz},
 
     }).then(function(message){
         initMap();
@@ -58,4 +72,7 @@ $(document).on('click', '.edit', function(e) {
          $('#update_profile').show();
 
      });
+$(document).on('click', '.edit-donations', function(e) {
+         $('#update_accepted_donations').show();
 
+     });
