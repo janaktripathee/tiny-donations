@@ -58,7 +58,7 @@ app.post('/signup', function(req, res){
               return;
           }
 
-         message = "Success! Your account has been created.";
+         message = "Success! Your account has been created.Please sign in";
          res.render('login',{message: message, level: 'success'});
       });
     
@@ -83,7 +83,7 @@ app.post('/login', function(req, res){
             res.redirect('/profile');
          }
          else{
-            message = 'Wrong Credentials.';
+            message = 'Wrong Credentials.Please try again';
             res.render('login',{message: message, level: 'danger'});
          }
                  
