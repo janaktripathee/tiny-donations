@@ -27,107 +27,69 @@
             <!--/.container-fluid -->
         </nav>
     </div>
-    <h2 style="font-size: 45px;font-family: cursive;font-size: 40px;
-    font-family: cursive;
-    display: block;
-    background: #f5f5f5;
-    width: 80%;
-    text-align: left;
-    margin: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;">Tiny Donations</h2>
-    <h2 style="margin: auto;
-    background: #f5ae2c;
-    text-align: center;
-    font-size: 41px;
-    padding: 11px;
-    width: 50%;
-    border-radius: 5px 5px 0px 0px ;">Welcome to your Profile</h2>
-    <div id="profile-info" style="display: block;
-    width: 50%;
-    text-align: center;
-    margin: auto;
-    background: #f5f5f5;
-    padding: 11px;
-    height: 200px;
-    border-radius: 0px 0px 5px 5px;"></div>
+    <h2 style="font-size: 45px;font-family: cursive;font-size: 40px;font-family: cursive;display: block;background: #f5f5f5;width: 80%;text-align: left;margin: auto;border-radius: 5px;margin-bottom: 10px;">Tiny Donations</h2>
+    <h2 style="margin: auto;background: #f5ae2c;text-align: center;font-size: 41px;padding: 11px;width: 50%;border-radius: 5px 5px 0px 0px ;">Welcome to your Profile</h2>
+    <div id="profile-info" style="display: block;width: 50%;text-align: center;margin: auto;background: #f5f5f5;padding: 11px;height: 200px;border-radius: 0px 0px 5px 5px;"></div>
     <div id="location-info"></div> <span id='donations-accepted'>Donations Accepted: <br></span>
     <div id="donations-accepted"></div>
     <div id='donations-accepted-button'></div>
     <form id="update_profile">
-        <h2 style="    margin: 0px;
-    background: #f5ae2c;
-    text-align: center;
-    font-size: 37px;
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;">Create Donation Center</h2>
-        <table>
+        <h2 style="    margin: 0px;background: #f5ae2c;text-align: center;font-size: 37px;width: 100%;border-radius: 5px 5px 0px 0px;">Create Donation Center</h2>
+        <table style="width: 100%;background: #f5f5f5;">
             <tr>
                 <td>Location Name:</td>
                 <td>
-                    <input type='text' id='location_name' placeholder='Location Name' /> </td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='location_name' placeholder='Location Name' /> </td>
             </tr>
             <tr>
-                <td>Address</td>
-                <tr>
-                    <td>Street:</td>
-                    <td>
-                        <input type='text' id='street' placeholder='Street Address' /> </td>
-                </tr>
-                <tr>
-                    <td>City:</td>
-                    <td>
-                        <input type='text' id='city' placeholder='City' /> </td>
-                </tr>
-                <tr>
-                    <td>State:</td>
-                    <td>
-                        <input type='text' id='state' placeholder='State' /> </td>
-                </tr>
-                <tr>
-                    <td>ZIP:</td>
-                    <td>
-                        <input type='text' id='zip' placeholder='ZIP' /> </td>
-                </tr>
-                <tr>
-                    <td>Available</td>
-                    <tr>
-                        <td>Days:</td>
-                        <td>
-                            <input type='text' id='days' placeholder="ex. M-F" /> </td>
-                    </tr>
-                    <tr>
-                        <td>Hours:</td>
-                        <td>
-                            <input type='text' id='hours' placeholder="ex. 9-5PM" /> </td>
-                    </tr>
-                    <tr>
-                        <td>Instructions:</td>
-                        <td>
-                            <input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall" /> </td>
-                    </tr>
-                    <tr>
-                        <td>Photo:</td>
-                        <td>
-                            <input type="file" name="pic" accept="image/*"> </td>
-                    </tr>
+                <td>Street Address:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='street' placeholder='Street Address' /> </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='city' placeholder='City' /> </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='state' placeholder='State' /> </td>
+            </tr>
+            <tr>
+                <td>ZIP:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='zip' placeholder='ZIP' /> </td>
+            </tr>
+            <tr>
+                <td>Available Days:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='days' placeholder="ex. M-F" /> </td>
+            </tr>
+            <tr>
+                <td>Hours:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='hours' placeholder="ex. 9-5PM" /> </td>
+            </tr>
+            <tr>
+                <td>Instructions:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall" /> </td>
+            </tr>
+            <tr>
+                <td>Photo:</td>
+                <td>
+                    <input style="width: 90%;border-radius: 5px;padding: 8px;font-size: 16px" type="file" name="pic" accept="image/*"> </td>
+            </tr>
         </table>
-        <button>Save</button>
+        <button class="donate-save">Save</button>
     </form>
     <form id="update_accepted_donations">
-        <h2 style="    margin: 0px;
-    background: #f5ae2c;
-    text-align: center;
-    font-size: 37px;
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;">Edit the values to get In</h2>
-        <table style="    width: 100%;
-    background: #f5f5f5;">
+        <h2 style="margin: 0px;background: #f5ae2c;text-align: center;font-size: 37px;width: 100%;border-radius: 5px 5px 0px 0px;">Edit the values to get In</h2>
+        <table style="width: 100%;background: #f5f5f5;">
             <tr>
-                <td style="font-size: 20px;
-    font-weight: bold;">Accepted:</td>
-                <td style="font-size: 20px;
-    font-weight: bold;">Qty:</td>
+                <td style="font-size: 20px;font-weight: bold;">Accepted:</td>
+                <td style="font-size: 20px;font-weight: bold;">Qty:</td>
             </tr>
             <tr>
                 <td>
