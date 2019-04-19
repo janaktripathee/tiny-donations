@@ -104,3 +104,15 @@ button {
     opacity: .5;
     border:1px solid gray;
 }
+#map-profile{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    width: 52%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+    
+}
