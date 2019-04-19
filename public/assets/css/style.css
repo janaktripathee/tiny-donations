@@ -50,3 +50,27 @@ button {
     left: 88px;
     top: -67px;
 }
+#update_accepted_donations{
+        display: block;
+    width: 52%;
+    text-align: center;
+    background: gray;
+    margin: auto;
+    /* padding: 11px; */
+    border-radius: 5px;
+
+}
+.save-btn{
+    background: #314453;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding: 8px;
+    font-size: 25px;
+    border-radius: 0px 0px 5px 5px;
+    
+}
+.save-btn:hover{
+    opacity: .5;
+    border: 1px solid gray;
+}
