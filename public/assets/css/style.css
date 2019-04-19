@@ -116,3 +116,20 @@ button {
     
     
 }
+#logout{
+    float: right;
+    font-size: 23px;
+    font-family: inherit;
+    color: green;
+    /* margin: 0px; */
+    padding: 0px;
+    margin-top: 18px;
+    margin-right: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#logout:hover{
+    text-decoration: none;
+    color:blue;
+    
+}

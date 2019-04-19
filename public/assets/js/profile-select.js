@@ -86,6 +86,8 @@ function getProfile(){
 			}
 		}
 	})
+
+    
 	$.ajax({
 		url: '/donationsaccepted.json',
 		method: 'GET'

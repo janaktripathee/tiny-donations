@@ -175,9 +175,9 @@ app.get('/locations',function(req,res) {
 });
 
 
-app.get('*', function(req, res){
-	res.redirect('/dashboard')
-});
+//app.get('*', function(req, res){
+//	res.redirect('/dashboard')
+//});
 
 app.listen(port, function(){
 	console.log('listening on '+port);

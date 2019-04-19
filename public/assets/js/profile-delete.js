@@ -13,3 +13,17 @@ $(document).on('click', '.delete', function(e) {
 	});
 
 });
+$(document).on('click', '#logout', function(e) {
+
+    // e.preventDefault(); // avoid to execute the actual submit of the form.
+    
+	$.ajax({
+		url: '/logout',
+		method: 'GET',
+		//data: {id : $(this).attr('data-id')}
+	}).then(function(res){
+		window.location.href ='/'
+
+	});
+
+});
