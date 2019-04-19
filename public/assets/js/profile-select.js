@@ -8,7 +8,7 @@ function getProfile(){
 		for (var profileIndex in profile){
 			
 
-			var profileinfo = $('<div>'); 
+			var profileinfo = $('<div class="profile-container">'); 
 				
 				profileinfo.html(`Name: ${profile[profileIndex].name}`)
 
