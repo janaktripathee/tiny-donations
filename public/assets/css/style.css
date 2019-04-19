@@ -1,33 +1,35 @@
-html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 button {
-	margin-left : 5px;
+    margin-left: 5px;
 }
 
 #map-profile {
     height: 350px;
     width: 500px;
 }
- 
-#map-locations {
-     height: 600px;
-     width: 800px;
- }
 
-#profile-infowindow{
+#map-locations {
+    height: 600px;
+    width: 800px;
+}
+
+#profile-infowindow {
     display: none;
 }
-.profile-container{
+
+.profile-container {
     display: block;
     font-size: 27px;
     margin-bottom: 40px;
 }
-#create_donation_center{
+
+#create_donation_center {
     margin-top: 74px;
     padding: 9px;
     border-radius: 5px;
@@ -36,12 +38,13 @@ button {
     position: relative;
     left: -40px;
 }
-#donations-accepted-button{
-        display: block;
-    text-align: center;
 
+#donations-accepted-button {
+    display: block;
+    text-align: center;
 }
-.edit-donations{
+
+.edit-donations {
     padding: 9px;
     border-radius: 5px;
     background: #d3d3f5;
@@ -50,17 +53,18 @@ button {
     left: 88px;
     top: -67px;
 }
-#update_accepted_donations{
-        display: block;
+
+#update_accepted_donations {
+    display: block;
     width: 52%;
     text-align: center;
     background: gray;
     margin: auto;
     /* padding: 11px; */
     border-radius: 5px;
-
 }
-.save-btn{
+
+.save-btn {
     background: #314453;
     display: block;
     width: 100%;
@@ -68,9 +72,22 @@ button {
     padding: 8px;
     font-size: 25px;
     border-radius: 0px 0px 5px 5px;
-    
 }
-.save-btn:hover{
+
+.save-btn:hover {
     opacity: .5;
     border: 1px solid gray;
+}
+
+#update_profile {
+    display: block;
+    width: 52%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin: auto;
+    background: #f5f5f5;
+    height: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
