@@ -81,7 +81,6 @@ function getProfile(){
 				$('#location-map').show();
 				$('#update_accepted_donations').show();
 				$('#donations-accepted').show();
-				$('.edit-donations').show();
 
 
 			}
@@ -108,7 +107,6 @@ function getProfile(){
 			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} Qty: ${donationsaccepted[donationsacceptedIndex].quantity}`)
 			$('#donations-accepted').append(donations_accepted);
 
-			// $('#profile-infowindow').append(donations_accepted);
-};
-});
+		};
+	});
 }

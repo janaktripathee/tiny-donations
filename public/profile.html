@@ -36,22 +36,26 @@
 <div id="location-info"></div>
 <span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div>
 <div id ='donations-accepted-button'></div>
-<form id="update_profile">
-    <table>
-    <tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
-    <tr><td>Address</td> 
-    <tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
-    <tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
-    <tr><td>State:</td> <td><input type='text' id='state' placeholder='State'/> </td> </tr>
-    <tr><td>ZIP:</td> <td><input type='text' id='zip' placeholder='ZIP'/> </td> </tr>
-    <tr><td>Available</td> 
-    <tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
-    <tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
-    <tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
-    <tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
-    </table>
-    <button>Save</button>
-</form>
+ <div class="row">
+         <div class="col-lg-auto col-md-auto col-sm-auto">
+            <form id="update_profile">
+                <table>
+                <tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
+                <tr><td>Address</td> 
+                <tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
+                <tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
+                <tr><td>State:</td> <td><input type='text' id='state' placeholder='State'/> </td> </tr>
+                <tr><td>ZIP:</td> <td><input type='text' id='zip' placeholder='ZIP'/> </td> </tr>
+                <tr><td>Available</td> </tr>
+                <tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
+                <tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
+                <tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
+                <tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
+                </table>
+                <button>Save</button>
+            </form>
+        </div>
+  </div>
 <form id="update_accepted_donations">
     <table>
     <tr><td>Accepted:</td><td>Qty:</td></tr>
@@ -64,9 +68,11 @@
 <button>Save</button>
 </form>
 
+            <span id='location-map'>Location: <br></span>
+            <div id="map-profile"></div>
 <div id="profile-infowindow"></div>
-<span id='location-map'>Location: <br></span><div id="map-profile"></div>
 
+      
 </section>
   </div>
 <footer class="footer fixed-bottom">
@@ -77,7 +83,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script async defer 
-  src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAClqggRs4-_818VzJWP82vD0vm_1P0Lw0&callback=initMap"></script>
   <script type="text/javascript" src="/assets/js/profile-map.js"></script>
   <script type="text/javascript" src="/assets/js/profile-select.js"></script>
   <script type="text/javascript" src="/assets/js/profile-insert.js"></script>

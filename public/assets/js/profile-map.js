@@ -80,7 +80,7 @@ function saveLocation() {
     console.log(cx,cy);
 
    $.ajax({
-    url: '/profile-update',
+    url: '/profile-update-location',
     method: 'POST',
         data: {lat : cx, lng: cy},
 

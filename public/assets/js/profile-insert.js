@@ -34,13 +34,12 @@ $('#update_profile').submit(function(e) {
     }).then(function(message){
         initMap();
         getProfile();
-
     });
 });
 
 $('#update_accepted_donations').submit(function(e) {
 
-    var cx = $( "#update_accepted_donations input[name='donation_type[]']" ).val();
+    var ct = $( "#update_accepted_donations input[name='donation_type[]']" ).val();
     var cz = $( "#update_accepted_donations input[name='quantity[]']" ).val();
    
     // var cx = $("#update_accepted_donations input[name='donation_type[]']").map(function(){return $(this).val();}).get();
@@ -58,7 +57,7 @@ $('#update_accepted_donations').submit(function(e) {
     $.ajax({
         url: '/profile-insert-accepted-donations',
         method: 'POST',
-        data: {'donation_type': cx, 'quantity': cz},
+        data: {'donation_type': ct, 'quantity': cz},
 
     }).then(function(message){
         initMap();
