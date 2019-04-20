@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta charset="UTF-8">
+
 	<title>Tiny Donations</title>
+
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
+  <header id="masthead">
+    <div class="container-fluid">
+      <div class="row align-items-center no-gutters ">
+	    <div class="col-lg-auto col-md-auto col-sm-auto mr-auto "> 
+	      <a href="/" class="navbar-brand" id="logo">Tiny Donations</a>
+	  	</div>
+    	<div class="col-lg-auto col-md-auto col-sm-auto"> 
+          <nav class="navbar justify-content-center justify-content-end p-1"> 
+          	<a href="/signup"  id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Sign up</a>
+          	<a href="/locations" id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Donate</a>
+          <a class="nav-link" href="/">About</a>
+	      <a class="nav-link" href="/login">Login</a>
+    	  </nav>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<h2>Locations</h2>
-
-<div id="map-locations"></div>
-
+  <div id="main-container" class="container-fluid">
+    <section class="container">
+      <h5>Locations</h5>
+		<div id="map-locations"></div>
+	</section>
+  </div>
+  <footer class="footer fixed-bottom">
+	<span class="copyright-notice">Copyright &#169; 2019 | Tiny Donations</span>
+  </footer>
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

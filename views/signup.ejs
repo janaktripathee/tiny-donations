@@ -1,53 +1,48 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Sample Site</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <title>Tiny Donations</title>
+    <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 
-<body style="background: #005073;">
-    <div class="container col-sm-12" id="mainform">
-        <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">Sign Up</div>
-                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/login">Sign In</a></div>
+<%- include header %>
+
+<body>
+    <div id="main-container" class="container-fluid">
+        <section class="container">
+            <div class="col-md-7 offset-2 col-centered">    
+                <h5>Sign Up</h5>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><span>Already have an account? </span><a id="signuporinlink" href="/login">Sign In</a></div>
+            <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
+                <% if (message && message.length > 0) { %>
+                <div class="alert alert-<%= level %> col-sm-12">
+                    <%= message %>
                 </div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
-                        <% if (message && message.length > 0) { %>
-                        <div class="alert alert-<%= level %> col-sm-12">
-                            <%= message %>
-                        </div>
-                        <% } %>
-                                <div class="form-group">
-                                    <label for="last_name" class="col-md-3 control-label">Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="name" placeholder="Please EnterName" required> </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="user_name" class="col-md-3 control-label">User Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="user_name" placeholder="User Name" required> </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-md-3 control-label">Password</label>
-                                    <div class="col-md-9">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" required> </div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- Button -->
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                    </div>
-                                </div>
-                    </form>
+                <% } %>
+                <div class="form-group">
+                    <label for="name" class="">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="First, Last" required> 
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="user_name" class="control-label">Username</label>
+                    <input type="text" class="form-control" name="user_name" placeholder="Username" required> 
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required> 
+                </div>
+                <div class="form-group">
+                    <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</button>
+                </div>
+            </form>
         </div>
+        </section>
     </div>
 </body>
 
+<%- include footer %>
 </html>

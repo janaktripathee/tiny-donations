@@ -1,6 +1,4 @@
 function getProfile(){
-	$('div').empty();
-
 	$.ajax({
 		url: '/profile.json',
 		method: 'GET'
@@ -55,7 +53,8 @@ function getProfile(){
 				editprofilebt.text('Edit'); //<button>delete</button>
 				//<button data-id="4">delete</button>
 				
-			
+				        				$('#edit-donations').hide();
+
 
 			var windowprofileinfo = $('<div>'); // <p></p>
 
@@ -80,8 +79,10 @@ function getProfile(){
 				$('#location-info').html(locationinfo);
 				locationinfo.append(editprofilebt);
 				$('#location-map').show();
-				$('#update_accepted_donations').hide();
+				$('#update_accepted_donations').show();
 				$('#donations-accepted').show();
+				$('.edit-donations').show();
+
 
 			}
 		}
@@ -98,6 +99,8 @@ function getProfile(){
 				
 				editdonationsbutton.text('Edit');
 			$('#donations-accepted-button').append(editdonationsbutton);
+			        				$('.edit-donations').hide();
+
 		for (var donationsacceptedIndex in donationsaccepted){
 			
 

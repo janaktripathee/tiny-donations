@@ -1,121 +1,95 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
     <title>Tiny Donations</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"> </head>
 
-<body style="background:#005073"> <span style="font-size: 45px;font-family: cursive;font-size: 40px;font-family: cursive;display: block;background: #f5f5f5;width: 80%;text-align: left;margin: auto;border-radius: 5px;margin-bottom: 10px;">
-    
-    <span>Tiny Donations</span> <span id="logout">logout</span> </span>
-    <h2 style="margin: auto;background: #f5ae2c;text-align: center;font-size: 41px;padding: 11px;width: 50%;border-radius: 5px 5px 0px 0px ;">Welcome to your Profile</h2>
-    <div id="profile-info" style="display: block;width: 50%;text-align: center;margin: auto;background: #f5f5f5;padding: 11px;height: 200px;border-radius: 0px 0px 5px 5px;"></div>
-    <div id="location-info"></div> <span id='donations-accepted'>Donations Accepted: <br></span>
-    <div id="donations-accepted"></div>
-    <div id='donations-accepted-button'></div>
-    <form id="update_profile">
-        <h2 style="    margin: 0px;background: #f5ae2c;text-align: center;font-size: 37px;width: 100%;border-radius: 5px 5px 0px 0px;">Create Donation Center</h2>
-        <table style="width: 100%;background: #f5f5f5;">
-            <tr>
-                <td>Location Name:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='location_name' placeholder='Location Name' /> </td>
-            </tr>
-            <tr>
-                <td>Street Address:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='street' placeholder='Street Address' /> </td>
-            </tr>
-            <tr>
-                <td>City:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='city' placeholder='City' /> </td>
-            </tr>
-            <tr>
-                <td>State:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='state' placeholder='State' /> </td>
-            </tr>
-            <tr>
-                <td>ZIP:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='zip' placeholder='ZIP' /> </td>
-            </tr>
-            <tr>
-                <td>Available Days:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='days' placeholder="ex. M-F" /> </td>
-            </tr>
-            <tr>
-                <td>Hours:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='hours' placeholder="ex. 9-5PM" /> </td>
-            </tr>
-            <tr>
-                <td>Instructions:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;" type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall" /> </td>
-            </tr>
-            <tr>
-                <td>Photo:</td>
-                <td>
-                    <input style="width: 90%;border-radius: 5px;padding: 8px;font-size: 16px" type="file" name="pic" accept="image/*"> </td>
-            </tr>
-        </table>
-        <button class="donate-save">Save</button>
-    </form>
-    <form id="update_accepted_donations">
-        <h2 style="margin: 0px;background: #f5ae2c;text-align: center;font-size: 37px;width: 100%;border-radius: 5px 5px 0px 0px;">Edit the values to get In</h2>
-        <table style="width: 100%;background: #f5f5f5;">
-            <tr>
-                <td style="font-size: 20px;font-weight: bold;">Accepted:</td>
-                <td style="font-size: 20px;font-weight: bold;">Qty:</td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="width: 100%;border-radius: 5px;padding: 8px;" type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food' /> </td>
-                <td>
-                    <input style="width: 56%;border-radius: 5px;padding: 8px;" type='text' name="quantity[]" size='3' /> </td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="width: 100%;border-radius: 5px;padding: 8px;" type='text' id='donation_type' name='donation_type[]' placeholder='ex. Blankets' /> </td>
-                <td>
-                    <input style="width: 56%;border-radius: 5px;padding: 8px;" type='text' name="quantity[]" size='3' /> </td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="width: 100%;border-radius: 5px;padding: 8px;" type='text' id='donation_type' name='donation_type[]' placeholder='ex. School Supplies' /> </td>
-                <td>
-                    <input style="width: 56%;border-radius: 5px;padding: 8px;" type='text' name="quantity[]" size='3' /> </td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="width: 100%;border-radius: 5px;padding: 8px;" type='text' id='donation_type' name='donation_type[]' placeholder='ex. Toys' /> </td>
-                <td>
-                    <input style="width: 56%;border-radius: 5px;padding: 8px;" type='text' name="quantity[]" size='3' /> </td>
-            </tr>
-            <tr>
-                <td>
-                    <input style="width: 100%;border-radius: 5px;padding: 8px;" type='text' id='donation_type' name='donation_type[]' placeholder='ex. Clothing' /> </td>
-                <td>
-                    <input style="width: 56%;border-radius: 5px;padding: 8px;" type='text' name="quantity[]" size='3' /> </td>
-            </tr>
-        </table>
-        <button class="save-btn">Save</button>
-    </form>
-    <div id="profile-infowindow"></div> <span id='location-map'>Location: <br></span>
-    <div id="map-profile"></div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initMap"></script>
-    <script type="text/javascript" src="/assets/js/profile-map.js"></script>
-    <script type="text/javascript" src="/assets/js/profile-select.js"></script>
-    <script type="text/javascript" src="/assets/js/profile-insert.js"></script>
-    <script type="text/javascript" src="/assets/js/profile-delete.js"></script>
-    <script type="text/javascript">
-        getProfile();
-        initMap();
-    </script>
+    <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+   <header id="masthead">
+    <div class="container-fluid">
+      <div class="row align-items-center no-gutters ">
+        <div class="col-lg-auto col-md-auto col-sm-auto mr-auto "> 
+          <a href="/" class="navbar-brand" id="logo">Tiny Donations</a>
+        </div>
+        <div class="col-lg-auto col-md-auto col-sm-auto"> 
+          <nav class="navbar justify-content-center justify-content-end p-1"> 
+            <a href="/signup"  id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Sign up</a>
+            <a href="/locations" id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Donate</a>
+          <a class="nav-link" href="/">About</a>
+          <a class="nav-link" href="/login">Login</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+<div id="main-container" class="container-fluid">
+    <section class="container">
+      <h5>Profile</h5>
+
+<div id="profile-info"></div>
+<div id="location-info"></div>
+<span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div>
+<div id ='donations-accepted-button'></div>
+<form id="update_profile">
+    <table>
+    <tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
+    <tr><td>Address</td> 
+    <tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
+    <tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
+    <tr><td>State:</td> <td><input type='text' id='state' placeholder='State'/> </td> </tr>
+    <tr><td>ZIP:</td> <td><input type='text' id='zip' placeholder='ZIP'/> </td> </tr>
+    <tr><td>Available</td> 
+    <tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
+    <tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
+    <tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
+    <tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
+    </table>
+    <button>Save</button>
+</form>
+<form id="update_accepted_donations">
+    <table>
+    <tr><td>Accepted:</td><td>Qty:</td></tr>
+    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Blankets'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. School Supplies'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Toys'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Clothing'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+    </table>
+<button>Save</button>
+</form>
+
+<div id="profile-infowindow"></div>
+<span id='location-map'>Location: <br></span><div id="map-profile"></div>
+
+</section>
+  </div>
+<footer class="footer fixed-bottom">
+    <span class="copyright-notice">Copyright &#169; 2019 | Tiny Donations</span>
+  </footer>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script async defer 
+  src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initMap"></script>
+  <script type="text/javascript" src="/assets/js/profile-map.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-select.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-insert.js"></script>
+  <script type="text/javascript" src="/assets/js/profile-delete.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+    getProfile();
+    initMap();
+</script>
 </body>
-
 </html>
+
+

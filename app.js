@@ -109,20 +109,28 @@ app.get('/img2',function(req, res){
     
 })
 app.get('/img3',function(req, res){
-    res.sendFile(__dirname + '/public/assets/images/image3.png');
+    res.sendFile(__dirname + '/public/assets/images/image3.jpg');
     
 })
 app.get('/giveimg',function(req, res){
     res.sendFile(__dirname + '/public/assets/images/give.png');
     
 })
+app.get('/hostimg',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/host.png');
+    
+})
+app.get('/helpimg',function(req, res){
+    res.sendFile(__dirname + '/public/assets/images/help.png');
+    
+})
 
 
 app.get('/profile.json', function(req, res){
-	connection.query('SELECT * FROM users', function (error, results, fields) {
-	  if (error) res.send(error)
-	  else res.json(results);
-	});
+  connection.query('SELECT * FROM users', function (error, results, fields) {
+    if (error) res.send(error)
+    else res.json(results);
+  });
 
 });
 
@@ -176,11 +184,11 @@ app.get('/locations',function(req,res) {
 
 
 //app.get('*', function(req, res){
-//	res.redirect('/dashboard')
+//  res.redirect('/dashboard')
 //});
 
 app.listen(port, function(){
-	console.log('listening on '+port);
+  console.log('listening on '+port);
 });
 
 
