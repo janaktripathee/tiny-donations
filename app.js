@@ -97,6 +97,7 @@ app.get('/logout',function(req, res){
 } );//call for logout
 
 
+
 app.get('/profile',function(req,res) {
   res.sendFile(__dirname + '/public/profile.html');
 });
@@ -174,6 +175,14 @@ app.post('/profile-delete', function(req, res){
   connection.query('DELETE FROM users WHERE id = (?)', [req.body.id],function (error, results, fields) {
     
     res.redirect('/profile.html');
+  
+  });
+});
+
+
+app.post('/donationsaccepted-delete', function(req, res){
+  connection.query('DELETE FROM donations_accepted WHERE id = (?)', [req.body.id],function (error, results, fields) {
+    
   
   });
 });

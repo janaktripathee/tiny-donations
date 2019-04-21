@@ -9,6 +9,7 @@ function  initLocations() {
 
     $.ajax({
     url: '/profile.json',
+
     method: 'GET'
     }).then(function(profile){
 
@@ -27,6 +28,14 @@ function  initLocations() {
       map: map,
       });
 
+
+      $.ajax({
+    url: '/donationsaccepted.json',
+    method: 'GET'
+  }).then(function(donationsaccepted){
+
+    for (var donationsacceptedIndex in donationsaccepted){
+
       google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
                 return function () {
                 infowindow.open(map, marker);
@@ -39,7 +48,10 @@ function  initLocations() {
                   'Days: ' + profile[profileIndex].days + '<br>' +
                   'Hours: ' + profile[profileIndex].hours + '<br>' +
                   'Instructions: ' + profile[profileIndex].instructions + '<br>' +
-                  "<input type='button' id='save_location' value='Donate Here'>"
+                  'Accepting:  ' + '<br>' +
+                  'Type: ' + donationsaccepted[donationsacceptedIndex].donation_type + '<br>' +
+                  'Qty: ' + donationsaccepted[donationsacceptedIndex].quantity + '<br>' +
+                  "<input type='button' id='donate-here-bt' value='Donate Here'>"
                   );
                 }
               })(marker, profileIndex));
@@ -62,6 +74,8 @@ function  initLocations() {
       
     };
   });
+}
+});
 }
 
 

@@ -27,7 +27,16 @@ CREATE TABLE donations_accepted (
     id INT NOT NULL AUTO_INCREMENT, 
     donation_type VARCHAR(255),
     quantity INT,
-    -- user_id INT ,
-    -- foreign key (user_id) references users(id),
+    user_id INT ,
+    foreign key (user_id) references users(id),
     PRIMARY KEY(id)
 );
+
+CREATE TABLE donations_accepted_user_join (
+    id INT NOT NULL AUTO_INCREMENT, 
+    donation_id Int,
+    user_id INT ,
+    foreign key (donation_id) references donations_accepted (id),
+    foreign key (user_id) references users(id),
+    PRIMARY KEY(id)
+); 

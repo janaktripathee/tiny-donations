@@ -1,4 +1,6 @@
 function getProfile(){
+
+
 	$.ajax({
 		url: '/profile.json',
 		method: 'GET'
@@ -27,7 +29,7 @@ function getProfile(){
 								  <br> Days: ${profile[profileIndex].days}
 								  <br> Hours: ${profile[profileIndex].hours}
 								  <br> Instructions: ${profile[profileIndex].instructions}
-								  <br>`)
+								  <br> `)
 
 				$('#map-profile').hide();
 				$('#update_profile').hide();
@@ -67,7 +69,8 @@ function getProfile(){
 								  <br> Days: ${profile[profileIndex].days}
 								  <br> Hours: ${profile[profileIndex].hours}
 								  <br> Instructions: ${profile[profileIndex].instructions} 
-								  <br> <input type='button' id='save_location' onclick="saveLocation()" value='Save Location'/> `)
+								  <br> <input type='button' id='save_location' onclick="saveLocation()" value='Save Location'/>
+								   `)
 
 			
 			$('#profile-infowindow').html(windowprofileinfo);
@@ -79,34 +82,46 @@ function getProfile(){
 				$('#location-info').html(locationinfo);
 				locationinfo.append(editprofilebt);
 				$('#location-map').show();
-				$('#update_accepted_donations').show();
+				$('#update_accepted_donations').hide();
 				$('#donations-accepted').show();
-
 
 			}
 		}
-	})
-
-    
-	$.ajax({
+		$.ajax({
 		url: '/donationsaccepted.json',
 		method: 'GET'
 	}).then(function(donationsaccepted){
 
-		var editdonationsbutton = $('<button>'); //<button></button>
+		var editdonationsbutton = $('<button>'); 
 				editdonationsbutton.attr('class', 'edit-donations');
 				
-				editdonationsbutton.text('Edit');
+				editdonationsbutton.text('Add');
 			$('#donations-accepted-button').append(editdonationsbutton);
-			        				$('.edit-donations').hide();
 
 		for (var donationsacceptedIndex in donationsaccepted){
 			
-
 			var donations_accepted = $('<div>');
-			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} Qty: ${donationsaccepted[donationsacceptedIndex].quantity}`)
+
+			var deletedt = $('<a href=>'); 
+				deletedt.attr('class', 'deletedt');
+				
+				deletedt.text('Delete'); 
+				deletedt.attr('data-id', donationsaccepted[donationsacceptedIndex].id)
+
+
+			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} 
+					Qty: ${donationsaccepted[donationsacceptedIndex].quantity}`)
+			donations_accepted.append(deletedt);
+
 			$('#donations-accepted').append(donations_accepted);
+			
 
 		};
 	});
+
+
+	})
+
+    
+	
 }

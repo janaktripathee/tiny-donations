@@ -22,8 +22,9 @@
             <a href="/signup"  id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Sign up</a>
             <a href="/locations" id="nav-btn" class="btn btn-lg btn-outline-secondary" role="button">Donate</a>
           <a class="nav-link" href="/">About</a>
-          <a class="nav-link" href="/login">Login</a>
-          </nav>
+          <a class="nav-link" id="login" href="/login">Log in</a>
+<!--           <a class="nav-link" id="logout">Log out</a>
+ -->          </nav>
         </div>
       </div>
     </div>
@@ -31,13 +32,10 @@
 <div id="main-container" class="container-fluid">
     <section class="container">
       <h5>Profile</h5>
-
-<div id="profile-info"></div>
-<div id="location-info"></div>
-<span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div>
-<div id ='donations-accepted-button'></div>
- <div class="row">
-         <div class="col-lg-auto col-md-auto col-sm-auto">
+      <div class="row">
+          <div class="col-lg-4 col-sm-12">
+            <div id="profile-info"></div>
+            <div id="location-info"></div>
             <form id="update_profile">
                 <table>
                 <tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
@@ -50,30 +48,35 @@
                 <tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
                 <tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
                 <tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
-                <tr><td>Photo:</td> <td><input type="file" name="pic" accept="image/*"> </td> </tr>
                 </table>
                 <button>Save</button>
             </form>
         </div>
-  </div>
-<form id="update_accepted_donations">
-    <table>
-    <tr><td>Accepted:</td><td>Qty:</td></tr>
-    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Blankets'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. School Supplies'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Toys'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-    <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Clothing'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-    </table>
-<button>Save</button>
-</form>
-
+        <div class="col-lg-4 col-sm-12">
+          <div id="donations-accepted"><span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div></div>
+          <div id ='donations-accepted-button'></div>
+            <form id="update_accepted_donations">
+                <table>
+                <tr><td>Type:</td><td>Qty:</td></tr>
+                <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
+                </table>
+            <button>Save</button>
+            </form>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+          <div id ='profile-image'></div>
+            <form id="add_profile_image">
+                Photo:</td> <td><input type="file" name="pic" accept="image/*">
+            <button>Save</button>
+            </form>
+      </div>
+    </div>
+    
             <span id='location-map'>Location: <br></span>
             <div id="map-profile"></div>
-<div id="profile-infowindow"></div>
-
-      
+            <div id="profile-infowindow"></div>
 </section>
+
   </div>
 <footer class="footer fixed-bottom">
     <span class="copyright-notice">Copyright &#169; 2019 | Tiny Donations</span>
