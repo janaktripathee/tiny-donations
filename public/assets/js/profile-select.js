@@ -15,7 +15,7 @@ function getProfile(){
 				$('#profile-info').html(profileinfo);
 
 				var updateuserbt = $('<button>'); 
-         		updateuserbt.attr('id', 'create_donation_center');
+         		updateuserbt.attr('class', 'create_donation_center btn btn-dark btn-md');
          		updateuserbt.text('Create Donation Center');
          		$('#profile-info').append(updateuserbt);
 
@@ -37,11 +37,15 @@ function getProfile(){
 				$('#update_accepted_donations').hide();
 				$('#location-map').hide();
 				$('#donations-accepted').hide();
+				$('#donations-accepted-button').hide();
+				$('#add_profile_image').hide();
+				$('#profile-map-container').hide();
+
 
 
 
 				var deletebt = $('<button>'); //<button></button>
-				deletebt.attr('class', 'delete');
+				deletebt.attr('class', 'btn btn-md btn-dark deletebt');
 				
 				deletebt.text('Delete'); //<button>delete</button>
 				deletebt.attr('data-id', profile[profileIndex].id)
@@ -50,7 +54,7 @@ function getProfile(){
 				locationinfo.append(deletebt);
 
 				var editprofilebt = $('<button>'); //<button></button>
-				editprofilebt.attr('class', 'edit');
+				editprofilebt.attr('class', 'btn btn-md btn-dark edit');
 				
 				editprofilebt.text('Edit'); //<button>delete</button>
 				//<button data-id="4">delete</button>
@@ -106,13 +110,18 @@ function getProfile(){
               })(marker, profileIndex));
 
 			if (profile[profileIndex].user_group == 'donation_center'){      
-				$('#create_donation_center').hide();
+				$('.create_donation_center').hide();
 				$('#map-profile').show();
 				$('#location-info').html(locationinfo);
 				locationinfo.append(editprofilebt);
 				$('#location-map').show();
 				$('#update_accepted_donations').hide();
 				$('#donations-accepted').show();
+				$('#donations-accepted-button').show();
+				$('#add_profile_image').show();
+     			$('#donations-accepted').show();
+     			$('#donations-accepted-button').show();
+     			$('#profile-map-container').show();
 
 			}
 		}
@@ -122,7 +131,7 @@ function getProfile(){
 	}).then(function(donationsaccepted){
 
 		var editdonationsbutton = $('<button>'); 
-				editdonationsbutton.attr('class', 'edit-donations');
+				editdonationsbutton.attr('class', 'btn btn-md btn-dark edit-donations');
 				
 				editdonationsbutton.text('Add');
 			$('#donations-accepted-button').append(editdonationsbutton);

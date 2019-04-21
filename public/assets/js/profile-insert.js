@@ -1,9 +1,11 @@
 
-$(document).on('click', '#create_donation_center', function(e) {
+$(document).on('click', '.create_donation_center', function(e) {
      $('#update_profile').show();
      $('#map-profile').show();
-     $('#update_accepted_donations').show();
-     $('#create_donation_center').hide();
+     $('#update_accepted_donations').hide();
+     $('.create_donation_center').hide();
+
+
 
 });
 

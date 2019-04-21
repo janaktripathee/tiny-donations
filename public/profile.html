@@ -36,38 +36,66 @@
           <div class="col-lg-4 col-sm-12">
             <div id="profile-info"></div>
             <div id="location-info"></div>
-            <form id="update_profile">
-                <table>
-                <tr><td>Location Name:</td> <td><input type='text' id='location_name' placeholder='Location Name'/> </td> </tr>
-                <tr><td>Address</td> 
-                <tr><td>Street:</td> <td><input type='text' id='street' placeholder='Street Address'/> </td> </tr>
-                <tr><td>City:</td> <td><input type='text' id='city' placeholder='City'/> </td> </tr>
-                <tr><td>State:</td> <td><input type='text' id='state' placeholder='State'/> </td> </tr>
-                <tr><td>ZIP:</td> <td><input type='text' id='zip' placeholder='ZIP'/> </td> </tr>
-                <tr><td>Available</td> </tr>
-                <tr><td>Days:</td> <td><input type='text' id='days' placeholder="ex. M-F"/> </td> </tr>
-                <tr><td>Hours:</td> <td><input type='text' id='hours' placeholder="ex. 9-5PM"/> </td> </tr>
-                <tr><td>Instructions:</td> <td><input type='text' id='instructions' size='35' placeholder="ex: Green bin on south wall"/> </td> </tr>
-                </table>
-                <button>Save</button>
+            <form id="update_profile" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="location-name" class="control-label">Location Name</label>
+                    <input type="text" class="form-control" id='location_name' placeholder="Location Name" required> 
+                </div>
+                <div class="form-group">
+                    <label for="street" class="control-label"> Address</label>
+                    <input type="text" class="form-control" id='street' placeholder="Street Address" required> 
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id='city' placeholder="City" required> 
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id='state' placeholder="State" required> 
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id='zip' placeholder="Zip Code" required> 
+                </div>
+                <div class="form-group">
+                    <label for="available" class="control-label">Available</label>
+                    <input type="text" class="form-control" id='days' placeholder="Days (ex: M-F)" required> 
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id='hours' placeholder="Hours (ex: 9-5P)" required> 
+                </div>
+                <div class="form-group">
+                    <label for="instructions" class="control-label">Instructions</label>
+                    <input type="text" class="form-control" id='instructions' placeholder="ex: Green bin on south wall" required> 
+                </div>
+
+                <button id='save-update-profile' class='btn btn-md btn-dark'>Save</button><button id="close-update-profile"class='btn btn-md btn-dark'>Close</button>
+
             </form>
         </div>
         <div class="col-lg-4 col-sm-12">
-          <div id="donations-accepted"><span id='donations-accepted'>Donations Accepted: <br></span><div id="donations-accepted"></div></div>
-          <div id ='donations-accepted-button'></div>
-            <form id="update_accepted_donations">
-                <table>
-                <tr><td>Type:</td><td>Qty:</td></tr>
-                <tr><td><input type='text' id='donation_type' name='donation_type[]' placeholder='ex. Canned Food'/> </td> <td><input type='text' name="quantity[]"  size='3'/></td></tr>
-                </table>
-            <button>Save</button>
-            </form>
-      </div>
+          <div id="donations-accepted"><span id='donations-accepted'>Donations Accepted: <br></span></div>              
+                <div id ='donations-accepted-button'></div>
+                  <form id="update_accepted_donations" class="form-horizontal" role="form">
+                      <div class="form-row">
+                          <div class="col-8">
+                             <div class="form-group" id="donations-accepted">
+                                <input type="text" class="form-control" id='donation_type' name='donation_type[]' placeholder="ex: Canned Food"> 
+                             </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id='quantity' name="quantity[]"  size='3' placeholder="ex: 33" required> 
+                            </div>
+                          </div>
+                      </div>
+                    <button class='btn btn-md btn-dark'>Save</button>
+                  </form>
+        </div>
+
+      
       <div class="col-lg-4 col-sm-12">
-          <div id ='profile-image'></div>
-            <form id="add_profile_image">
+          <div id='profile-image'></div>
+            <form id="add_profile_image" class="form-control-file">
                 Photo:</td> <td><input type="file" name="pic" accept="image/*">
-            <button>Save</button>
+            <button class='btn btn-md btn-dark'>Save</button>
             </form>
       </div>
     </div>
@@ -75,6 +103,8 @@
             <div id="map-profile"></div>
             <div id="profile-infowindow"></div>
             </div>
+      </div>
+
     </section>
 
   </div>

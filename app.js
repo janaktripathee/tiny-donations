@@ -143,10 +143,7 @@ app.get('/donationsaccepted.json', function(req, res){
 
 });
 
-// connection.query('SELECT * FROM donations_accepted', function (error, results, fields) {
-//     if (error) res.send(error)
-//     else res.json(results);
-//   });
+
 
 app.post('/profile-update', function(req, res){
     connection.query('UPDATE users SET user_group = (?), location_name = (?), street = (?), city = (?), state = (?), zip = (?), days = (?), hours = (?), instructions = (?)', 
@@ -174,7 +171,8 @@ app.post('/profile-update-location', function(req, res){
 app.post('/profile-delete', function(req, res){
   connection.query('DELETE FROM users WHERE id = (?)', [req.body.id],function (error, results, fields) {
     
-    res.redirect('/profile.html');
+          res.redirect("/");
+
   
   });
 });
@@ -192,9 +190,9 @@ app.get('/locations',function(req,res) {
 });
 
 
-//app.get('*', function(req, res){
+// app.get('*', function(req, res){
 //  res.redirect('/dashboard')
-//});
+// });
 
 app.listen(port, function(){
   console.log('listening on '+port);

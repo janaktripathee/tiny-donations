@@ -1,4 +1,4 @@
-$(document).on('click', '.delete', function(e) {
+$(document).on('click', '.deletebt', function(e) {
 
     // e.preventDefault(); // avoid to execute the actual submit of the form.
     
@@ -7,8 +7,8 @@ $(document).on('click', '.delete', function(e) {
 		method: 'POST',
 		data: {id : $(this).attr('data-id')}
 	}).then(function(message){
-		getProfile();
-		initMap();
+		window.location.href ='/'
+
 
 	});
 
