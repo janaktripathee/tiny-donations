@@ -108,7 +108,9 @@ footer {
     display: none;
 }
 
-
+#profile-map-container {
+  margin-top: 10px;
+}
        
 /*.profile-container {
     display: block;

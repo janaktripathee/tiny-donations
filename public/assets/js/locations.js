@@ -38,9 +38,10 @@ function  initLocations() {
 
       google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
                 return function () {
+
                 infowindow.open(map, marker);
                 infowindow.setContent(
-                  'Name: ' + profile[profileIndex].name + '<br>' +
+                  'Location Name: ' + profile[profileIndex].location_name + '<br>' +
                   'Street: ' + profile[profileIndex].street  + '<br>' +
                   'City: ' + profile[profileIndex].city + '<br>' +
                   'State: ' + profile[profileIndex].state + '<br>' +
@@ -51,7 +52,7 @@ function  initLocations() {
                   'Accepting:  ' + '<br>' +
                   'Type: ' + donationsaccepted[donationsacceptedIndex].donation_type + '<br>' +
                   'Qty: ' + donationsaccepted[donationsacceptedIndex].quantity + '<br>' +
-                  "<input type='button' id='donate-here-bt' value='Donate Here'>"
+                  '<button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Donate Here</button>'
                   );
                 }
               })(marker, profileIndex));
@@ -77,7 +78,6 @@ function  initLocations() {
 }
 });
 }
-
 
 
 

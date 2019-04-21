@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
+
+
   <header id="masthead">
     <div class="container-fluid">
       <div class="row align-items-center no-gutters ">
@@ -35,20 +37,54 @@
 		<div id="map-locations"></div>
 	</section>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+
+
+
+
+
+
+
   <footer class="footer fixed-bottom">
 	<span class="copyright-notice">Copyright &#169; 2019 | Tiny Donations</span>
   </footer>
-<script
+  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script async defer 
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gkIKmmoluXWP9liDI_e86000Mg598p0&callback=initLocations"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=MY-KEY&callback=initLocations"></script>
   <script type="text/javascript" src="/assets/js/locations.js"></script>
+  <script type="text/javascript" src="/assets/js/donations.js"></script>
 
 
 <script type="text/javascript">
 	initLocations();
+
 </script>
 </body>
 </html>

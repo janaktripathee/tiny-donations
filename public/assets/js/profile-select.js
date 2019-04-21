@@ -61,7 +61,7 @@ function getProfile(){
 			var windowprofileinfo = $('<div>'); // <p></p>
 
 				
-				windowprofileinfo.html(`Name: ${profile[profileIndex].name} 
+				windowprofileinfo.html(`Location Name: ${profile[profileIndex].location_name} 
 								  <br> Street: ${profile[profileIndex].street}
 							      <br> City: ${profile[profileIndex].city}
 							      <br> State: ${profile[profileIndex].state}
@@ -75,6 +75,35 @@ function getProfile(){
 			
 			$('#profile-infowindow').html(windowprofileinfo);
 
+		    var infowindow = new google.maps.InfoWindow();
+		    var marker, profileIndex;
+		
+
+		      var lat = profile[profileIndex].lat;
+		      var lng = profile[profileIndex].lng;
+
+		      console.log(lat, lng);
+
+		      marker = new google.maps.Marker({
+		      position: new google.maps.LatLng(lat, lng),
+		      map: map,
+		      });
+		  		
+		  		google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
+                return function () {
+                infowindow.open(map, marker);
+                infowindow.setContent(
+                  'Location Name: ' + profile[profileIndex].location_name + '<br>' +
+                  'Street: ' + profile[profileIndex].street  + '<br>' +
+                  'City: ' + profile[profileIndex].city + '<br>' +
+                  'State: ' + profile[profileIndex].state + '<br>' +
+                  'Zip: ' + profile[profileIndex].zip + '<br>' +
+                  'Days: ' + profile[profileIndex].days + '<br>' +
+                  'Hours: ' + profile[profileIndex].hours + '<br>' +
+                  'Instructions: ' + profile[profileIndex].instructions + '<br>' 
+                  );
+                }
+              })(marker, profileIndex));
 
 			if (profile[profileIndex].user_group == 'donation_center'){      
 				$('#create_donation_center').hide();
