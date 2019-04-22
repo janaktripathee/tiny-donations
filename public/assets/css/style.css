@@ -87,6 +87,11 @@ margin: 0 auto;
   background-color:#FFA500
 }
 
+.deletedt{
+  margin-left: 5px;
+  color: #FFA500;
+}
+
 footer {
   border-top: 1px solid #cccccc;
   padding-top: 17px;
@@ -115,6 +120,12 @@ footer {
 #profile-map-container {
   margin-top: 10px;
 }
+
+.modal-backdrop
+{
+    opacity:0.5 ;
+}
+
        
 /*.profile-container {
     display: block;

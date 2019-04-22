@@ -15,3 +15,6 @@ INSERT INTO donations_accepted (dontation_type, quantity) VALUES
 ('books', 24),
 ('blankets', 3),
 ('canned food', 4);
+
+
+

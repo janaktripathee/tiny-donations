@@ -85,9 +85,8 @@ function saveLocation() {
         data: {lat : cx, lng: cy},
 
     }).then(function(message){
-        getProfile();
         initMap();
-
+        $('#save_location').hide();
     });
 
 }

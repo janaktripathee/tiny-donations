@@ -68,11 +68,12 @@
 
                 <button id='save-update-profile' class='btn btn-md btn-dark'>Save</button><button id="close-update-profile"class='btn btn-md btn-dark'>Close</button>
 
+
             </form>
         </div>
         <div class="col-lg-4 col-sm-12">
           <div id="donations-accepted"><span id='donations-accepted'>Donations Accepted: <br></span></div>              
-                <div id ='donations-accepted-button'></div>
+                <div id ='donations-accepted-button'><button id="close-donations-accepted"class='btn btn-md btn-dark'>Close</button></div>
                   <form id="update_accepted_donations" class="form-horizontal" role="form">
                       <div class="form-row">
                           <div class="col-8">
@@ -80,13 +81,9 @@
                                 <input type="text" class="form-control" id='donation_type' name='donation_type[]' placeholder="ex: Canned Food"> 
                              </div>
                           </div>
-                          <div class="col-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id='quantity' name="quantity[]"  size='3' placeholder="ex: 33" required> 
-                            </div>
-                          </div>
                       </div>
                     <button class='btn btn-md btn-dark'>Save</button>
+
                   </form>
         </div>
 
@@ -101,6 +98,7 @@
     </div>
             <div id='profile-map-container'><span id='location-map'>Location: <br></span>
             <div id="map-profile"></div>
+            <div id='profile-donations-made'></div>
             <div id="profile-infowindow"></div>
             </div>
       </div>
@@ -126,6 +124,7 @@
 
 <script type="text/javascript">
     getProfile();
+    getDonations();
     initMap();
 </script>
 </body>

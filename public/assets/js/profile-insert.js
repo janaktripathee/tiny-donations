@@ -42,7 +42,6 @@ $('#update_profile').submit(function(e) {
 $('#update_accepted_donations').submit(function(e) {
 
     var ct = $( "#update_accepted_donations input[name='donation_type[]']" ).val();
-    var cz = $( "#update_accepted_donations input[name='quantity[]']" ).val();
    
     // var cx = $("#update_accepted_donations input[name='donation_type[]']").map(function(){return $(this).val();}).get();
     // var cz = $("#update_accepted_donations input[name='quantity[]']").map(function(){return $(this).val();}).get();
@@ -54,12 +53,12 @@ $('#update_accepted_donations').submit(function(e) {
     // for (var i = 0; i < czv.length; i++) {
     //     console.log(czv[i]);
     // }
- 
+
  
     $.ajax({
         url: '/profile-insert-accepted-donations',
         method: 'POST',
-        data: {'donation_type': ct, 'quantity': cz},
+        data: {'donation_type': ct},
 
     }).then(function(message){
         initMap();
@@ -69,11 +68,28 @@ $('#update_accepted_donations').submit(function(e) {
 
 });
 
+$('#close-donations-accepted').hide();
+
+
 $(document).on('click', '.edit', function(e) {
          $('#update_profile').show();
 
      });
 $(document).on('click', '.edit-donations', function(e) {
-         $('#update_accepted_donations').show();
+        $('#update_accepted_donations').show();
+        $('#close-donations-accepted').show();
+        $('.edit-donations').hide();
 
      });
+$(document).on('click', '#close-update-profile', function(e) {
+
+$('#update_profile').hide();
+});
+$(document).on('click', '#close-donations-accepted', function(e) {
+        $('#close-donations-accepted').hide();
+        $('.edit-donations').show();
+        $('#update_accepted_donations').hide();
+});
+
+
+

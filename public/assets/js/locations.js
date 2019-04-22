@@ -36,23 +36,26 @@ function  initLocations() {
 
     for (var donationsacceptedIndex in donationsaccepted){
 
-      google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
+        // var donations_accepted = $('<div>');
+        // donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} `)
+        // $('#donations_accepted-window').append(donations_accepted);
+
+        google.maps.event.addListener(marker, 'click', (function (marker, profileIndex) {
                 return function () {
 
                 infowindow.open(map, marker);
                 infowindow.setContent(
-                  'Location Name: ' + profile[profileIndex].location_name + '<br>' +
-                  'Street: ' + profile[profileIndex].street  + '<br>' +
-                  'City: ' + profile[profileIndex].city + '<br>' +
-                  'State: ' + profile[profileIndex].state + '<br>' +
-                  'Zip: ' + profile[profileIndex].zip + '<br>' +
+                  profile[profileIndex].location_name + '<br>' +
+                  'Address:<br>' + profile[profileIndex].street  + '<br>' +
+                  profile[profileIndex].city + '<br>' +
+                  profile[profileIndex].state + '<br>' +
+                  + profile[profileIndex].zip + '<br>' +
                   'Days: ' + profile[profileIndex].days + '<br>' +
                   'Hours: ' + profile[profileIndex].hours + '<br>' +
                   'Instructions: ' + profile[profileIndex].instructions + '<br>' +
                   'Accepting:  ' + '<br>' +
-                  'Type: ' + donationsaccepted[donationsacceptedIndex].donation_type + '<br>' +
-                  'Qty: ' + donationsaccepted[donationsacceptedIndex].quantity + '<br>' +
-                  '<button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Donate Here</button>'
+                  donationsaccepted[donationsacceptedIndex].donation_type + '<br>' +
+                  '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="makeDonation()">Donate Here</button>'
                   );
                 }
               })(marker, profileIndex));
@@ -78,7 +81,6 @@ function  initLocations() {
 }
 });
 }
-
 
 
 

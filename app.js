@@ -185,6 +185,19 @@ app.post('/donationsaccepted-delete', function(req, res){
   });
 });
 
+app.post('/complete-donation', function(req, res){
+  connection.query('INSERT INTO donations_made (donation_type_made,donation_value,date) VALUES (?,?,?)', 
+    [req.body.donation_type_made,req.body.donation_value, req.body.date],function (error, results, fields) {
+  });
+});
+
+app.get('/donationsmade.json', function(req, res){
+  connection.query('SELECT * FROM donations_made', function (error, results, fields) {
+    if (error) res.send(error)
+    else res.json(results);
+  });
+});
+
 app.get('/locations',function(req,res) {
   res.sendFile(__dirname + '/public/locations.html');
 });

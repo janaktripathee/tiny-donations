@@ -15,9 +15,8 @@ $(document).on('click', '.deletebt', function(e) {
 });
 
 $(document).on('click', '.deletedt', function(e) {
+	// e.preventDefault();
 
-    // e.preventDefault(); // avoid to execute the actual submit of the form.
-    
 	$.ajax({
 		url: '/donationsaccepted-delete',
 		method: 'POST',

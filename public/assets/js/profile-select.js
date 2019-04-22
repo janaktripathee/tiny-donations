@@ -1,6 +1,5 @@
 function getProfile(){
 
-
 	$.ajax({
 		url: '/profile.json',
 		method: 'GET'
@@ -60,6 +59,7 @@ function getProfile(){
 				//<button data-id="4">delete</button>
 				
 				        				$('#edit-donations').hide();
+
 
 
 			var windowprofileinfo = $('<div>'); // <p></p>
@@ -122,7 +122,7 @@ function getProfile(){
      			$('#donations-accepted').show();
      			$('#donations-accepted-button').show();
      			$('#profile-map-container').show();
-
+     			$('#profile-donations-made').hide();
 			}
 		}
 		$.ajax({
@@ -131,12 +131,13 @@ function getProfile(){
 	}).then(function(donationsaccepted){
 
 		var editdonationsbutton = $('<button>'); 
-				editdonationsbutton.attr('class', 'btn btn-md btn-dark edit-donations');
+			
+			editdonationsbutton.attr('class', 'btn btn-md btn-dark edit-donations');
 				
-				editdonationsbutton.text('Add');
+			editdonationsbutton.text('Add');
 			$('#donations-accepted-button').append(editdonationsbutton);
 
-		for (var donationsacceptedIndex in donationsaccepted){
+			for (var donationsacceptedIndex in donationsaccepted){
 			
 			var donations_accepted = $('<div>');
 
@@ -146,20 +147,27 @@ function getProfile(){
 				deletedt.text('Delete'); 
 				deletedt.attr('data-id', donationsaccepted[donationsacceptedIndex].id)
 
-
-			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} 
-					Qty: ${donationsaccepted[donationsacceptedIndex].quantity}`)
+			donations_accepted.append(`${donationsaccepted[donationsacceptedIndex].donation_type} `)
 			donations_accepted.append(deletedt);
 
 			$('#donations-accepted').append(donations_accepted);
 			
-
-		};
-	});
-
-
+			};
+		});
 	})
+}
 
-    
-	
+function getDonations(){
+	$.ajax({
+			url: '/donationsmade.json',
+			method: 'GET'
+		}).then(function(donations_made){
+			for (var donations_madeIndex in donations_made){
+				var profile_donations_made = $('<div>')
+				profile_donations_made.append(`${donations_made[donations_madeIndex].donation_type_made}
+											   ${donations_made[donations_madeIndex].donation_value}
+											   ${donations_made[donations_madeIndex].date}`)
+				$('#profile-donations-made').append(profile_donations_made)
+		}
+	});
 }
